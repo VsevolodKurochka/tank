@@ -1,0 +1,236 @@
+%modalTransition{
+	@include transition();
+}
+// .fade {
+// 	opacity: 0;
+// 	@extend %modalTransition;
+// 	&.in{
+// 		opacity: 1;
+// 	}
+// }
+
+%visibility{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+%showing{
+	opacity: 0;
+	visibility: hidden;
+	@extend %modalTransition;
+	&_in{
+		opacity: 1;
+		visibility: visible;
+	}	
+}
+.vmodal{
+	position: fixed;
+	padding: 15px;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	z-index: z('modal');
+	backface-visibility: hidden;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+	@extend %modalTransition;
+	@extend %showing;
+	&_showing{
+		@extend %showing;
+		&_in{
+			@extend %showing_in;
+		}
+	}
+	&-open{
+		.vmodal{
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+	}
+	&__overlay{
+		z-index: z('modal__overlay');
+		background-color: rgba(0, 0, 0, 0.5);
+		@extend %visibility;
+		@extend %showing;
+	}
+	&__box{
+		position: relative;
+		border-radius: 10px;
+		background-color: setColor(white);
+		@extend %modalTransition;
+	}
+	&__close{
+		display: block;
+		width: 40px;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		font-size: 40px;
+		font-weight: 900;
+		line-height: 1;
+		z-index: z('default');
+		@include transition();
+		&:hover{
+			color: $color-modal-main;
+		}
+	}
+	&__body{
+		font-size: 15px;
+
+	}
+	&__inner{
+		height: 55vh;
+		overflow-y: auto;
+		padding-left: 15px;
+		padding-right: 15px;
+		border-radius: 6px;
+		p{
+			margin-bottom: 15px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		@include resp-min(sm){
+			height: 350px;
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+	&__content{
+		display: none;
+	}
+	@if($design-modal == 'new'){
+		&__box{
+			padding: 30px 15px;
+		}
+		&__title{
+			position: relative;
+			margin-bottom: 30px;
+			text-align: left;
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			line-height: 1.1;
+			color: $color-modal-main;
+			@extend .bold !optional;
+			&:after{
+				@include pseudo();
+				top: 0;
+				left: -15px;
+				width: 5px;
+				height: 100%;
+				background-color: $color-modal-main;
+			}
+		}
+		@include resp-min(xs){
+			&__box{
+				padding: 60px 50px 40px 50px;
+			}
+			&__title{
+				font-size: 25px;
+				&:after{
+					left: -50px;
+				}				
+			}
+		}
+	}@else{
+		&__box{
+			padding: 40px 30px;
+		}
+		&__title{
+			text-align: center;
+		}
+		&_text &{
+			&__title{
+				background-color: $color-modal-main;
+				color: setColor(white);
+				padding: 15px;
+				margin-bottom: 20px;
+				@extend .bold !optional;
+			}
+			@include resp-max(sm){
+				&__box{
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+				&__title{
+					font-size: 15px;
+				}
+			}
+		}
+	}
+	&-transparent{
+		background-color: rgba(0, 0, 0, 0.9);	
+	}
+	&-transparent &{
+		&-box{
+			background-color: transparent;
+			border: none;
+			box-shadow: none;
+			padding: 0;			
+		}
+		&-close{
+			color: #fff;
+		}
+		&-title{
+			color: $color-modal-main;
+			padding-left: 30px;
+			&:after{
+				left: 0;
+			}
+		}
+		@include resp-min(sm){
+			&-close{
+				top: -15px;
+				font-size: 60px;				
+			}
+			&-title{
+				padding-right: 50px;
+			}
+		}
+		@include resp-max(sm){
+			&-title{
+				font-size: 19px;
+				padding-right: 40px;
+				margin-bottom: 15px;
+			}
+		}
+	}
+	&-video{
+		margin-top: 30px;
+		@include resp-min(sm){
+			margin-top: 60px;
+		}
+	}
+	&-iframe{
+		display: block;
+		width: 100%;
+		min-height: 300px;
+	}  
+	@include resp-min(xs){
+		&_default{
+			max-width: 460px;
+		}
+		&_center{
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}	
+	}
+	@include resp-max(sm){
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@include resp-min(sm){
+
+		&.big{
+			width: 600px;
+			margin: 30px auto;
+		}
+	}
+}

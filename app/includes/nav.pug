@@ -1,0 +1,25 @@
+include mixins
+.vrow.flex-v-center
+	.vak.xs-8.md-3
+		.vnav__logo
+			button(type="button" class="vnav__btn" data-menu=".vnav_fixed .vnav__menu")
+				span.vnav__btn-lines
+					span
+					span
+					span
+				//span.vnav__btn-text Menu
+			.d-i
+				img(src="img/logo.png" alt="")
+	nav.vnav__menu.vak.xs-12.md-6
+		ul
+			+item("#sec1", "active") Главная
+			+item("#sec2") item_2
+			+item("#sec3") item_3
+	.vak.xs-4.md-3.vnav__text
+		.vnav__text-toggle.js-vnav-toggle
+			span
+			span
+			span
+		.vnav__text-links.js-vnav-links
+			a.vnav__text-links-inner +38 (093) 961 33 54
+			a.vnav__text-links-inner.vnav__text-links-inner_hidden +38 (093) 961 33 54

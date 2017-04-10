@@ -1,0 +1,30 @@
+doctype html
+html(lang="ru")
+	head
+		block title
+			title Project_name
+		block description
+			meta(name="description" content="")
+		include head
+		include mixins
+		include bem/index
+		-
+			set_bemto_settings({
+				prefix: '',
+				element: '__',
+				modifier: '_'
+			})
+	body
+		// +b.loader
+		// 	+e.spin._threeCirclesOpacity
+		// 		+e.SPAN.spin-text Loading...
+		// 	+e.section._left
+		// 	+e.section._right
+		block nav
+			.vnav.vnav_fixed
+				.vcontainer.vnav__container
+					include nav
+		main.main-wrapper
+			block content
+				
+	block dev			

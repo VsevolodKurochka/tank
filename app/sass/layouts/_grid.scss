@@ -1,0 +1,151 @@
+/* ===================== 
+Start: COLUMNS      
+======================== */
+@include make-column(xs,"not-push","not-pull","not-offset");
+@include resp-min(sm){
+  @include make-column(sm,"not-push","not-pull","not-offset");
+}
+@include resp-min(md){
+  @include make-column(md,"not-push","not-pull","not-offset");
+}
+@include resp-min(lg){
+  @include make-column(lg,"not-push","not-pull","not-offset");
+}
+/* =====================
+End:  COLUMNS
+======================== */
+
+/* ===================== 
+Start: HIDDEN AND VISIBLE UTILITIES      
+======================== */
+.vhidden,
+%vvisible{
+  display: none !important;
+}
+@each $br-name, $br-value in $breakpoints{
+  .vvisible-#{$br-name}{
+    @extend %vvisible;
+  }
+}
+@include resp-min(lg){
+  @include visibility(lg);
+}
+@include resp-min(md){
+  @include resp-max(lg){
+    @include visibility(md);
+  }
+}
+@include resp-min(sm){
+  @include resp-max(md){
+    @include visibility(sm);
+  }
+}
+@include resp-max(sm){
+  @include visibility(xs);
+}
+/* =====================
+End:  HIDDEN AND VISIBLE UTILITIES
+======================== */
+.relative{
+  position: relative;
+}
+%global-block{
+  min-height: 1px;
+  @include xOffset('padding', getComp(gutter));
+  @extend .relative;
+}
+.center-block{
+  display: block;
+  @include xOffset('margin', auto);
+}
+.cf{
+  @include cf();
+  @extend .relative;
+}
+.vrow{
+  @include xOffset('margin', - getComp(gutter));
+}
+@if getComp(flex) == true{
+  .#{getComp(columnName)}{
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-left: getComp(gutter);
+    padding-right: getComp(gutter);
+  }
+  .flex{
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &-v-center{
+      align-items: center;
+    }
+  }
+  .vrow{
+    @extend .flex;
+  }
+}@else{
+  .vrow,
+  .vcontainer{
+    @extend .cf;
+  }
+  .#{getComp(columnName)}{
+    @extend %global-block;
+    float: left;
+  }
+}
+.vcontainer{
+  @extend %global-block;
+  @extend .center-block;
+  @each $container_resp, $container_value in $containers{
+    @include resp-min($container_resp){
+      width: getComp($container_resp, $containers);
+    }
+  }  
+}
+%padding-block{
+  padding-top: 50px;
+  padding-bottom: 50px; 
+}
+.vsection{
+  @extend %padding-block;
+  @extend .relative;
+}
+.vpull{
+  &-left{
+    float: left;
+  }
+  &-right{
+    float: right;
+  }
+}
+// @each $br-name, $br-value in $breakpoints{
+//   @include resp-min($br-name){
+//     .vpull-#{$br-name}-right{
+//       float: right;
+//     }
+//     .text-#{$br-name}-right{
+//       text-align: right;
+//     }
+//     .vpull-#{$br-name}-left{
+//       float: left;
+//     }
+//   }
+//   @include resp-max($br-name){
+//     .max-#{$br-name}-negative{
+//       margin-left: -15px;
+//       margin-right: -15px;
+//     }
+//     .max-#{$br-name}-nom{
+//       margin-bottom: 0 !important;
+//     }
+//     .max-#{$br-name}-block{
+//       display: block;
+//     }
+//   }
+// }
+.d{
+  &-i{
+    display: inline-block;
+  }
+}

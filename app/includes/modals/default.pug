@@ -1,0 +1,17 @@
+.vmodal.vmodal_default.vmodal_center#vmodalText
+	.vmodal__box
+		button(type="button" class="vmodal__close" data-close="vmodal") &times;
+		p.vmodal__title Отправить заявку
+		.vmodal__body
+			form(action="" class="vform")
+				.vform__row
+					input(type="text" placeholder="Имя")
+					span.vform-line
+				.vform__row
+					input(type="email" placeholder="E-mail")
+					span.vform-line
+				.vform__row
+					input(type="text" placeholder="Телефон")
+					span.vform-line
+				.vform__row
+					button.vbtn.vbtn_main.vbtn_bounceTop(type="submit") Получить!

@@ -1,0 +1,21 @@
+body{
+  color: setColor(dark, black);  
+  font-size: 18px;
+  line-height: 1.42857143;
+  @extend .regular;
+}
+img{
+  max-width: 100%;
+  @extend .d-i;
+}
+input:focus{
+  @include input-placeholder{
+    color: transparent;
+  }
+}
+a,button{
+  cursor: pointer;
+}
+strong,.strong,b,.b{
+  @extend .black !optional;
+}

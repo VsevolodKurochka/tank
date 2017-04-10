@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Main Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"><!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <!-- +b.loader-->
+    <!-- 	+e.spin._threeCirclesOpacity-->
+    <!-- 		+e.SPAN.spin-text Loading...-->
+    <!-- 	+e.section._left-->
+    <!-- 	+e.section._right-->
+    <div class="vnav vnav_fixed">
+      <div class="vcontainer vnav__container">
+        <div class="vrow flex-v-center">
+          <div class="vak xs-8 md-3">
+            <div class="vnav__logo">
+              <button class="vnav__btn" type="button" data-menu=".vnav_fixed .vnav__menu"><span class="vnav__btn-lines"><span></span><span></span><span></span></span>
+                <!--span.vnav__btn-text Menu-->
+              </button>
+              <div class="d-i"><img src="img/logo.png" alt=""></div>
+            </div>
+          </div>
+          <nav class="vnav__menu vak xs-12 md-6">
+            <ul>
+                      <li class="vnav__item vnav__item_active"><a class="vnav__link" href="#sec1">Главная</a></li>
+                      <li class="vnav__item"><a class="vnav__link" href="#sec2">item_2</a></li>
+                      <li class="vnav__item"><a class="vnav__link" href="#sec3">item_3</a></li>
+            </ul>
+          </nav>
+          <div class="vak xs-4 md-3 vnav__text">
+            <div class="vnav__text-toggle js-vnav-toggle"><span></span><span></span><span></span></div>
+            <div class="vnav__text-links js-vnav-links"><a class="vnav__text-links-inner">+38 (093) 961 33 54</a><a class="vnav__text-links-inner vnav__text-links-inner_hidden">+38 (093) 961 33 54</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="main-wrapper">
+      <div class="vcontainer">
+                <button class="vbtn vbtn_main vbtn_shutterVerticalOut" data-func="vmodal" data-target="#vmodaltext" data-content="#vmodalText_content" data-title="Заголовок">Button
+                </button>
+      </div>
+    </main>
+  </body>
+  <div class="vmodal__content" id="vmodalText_content">
+    <p>asdasdasd</p>
+    <h1>12312312</h1>
+    <h2>123123123</h2>
+  </div>
+  <div class="vmodal vmodal_default vmodal_center" id="vmodalText">
+    <div class="vmodal__box">
+      <button class="vmodal__close" type="button" data-close="vmodal">&times;</button>
+      <p class="vmodal__title">Отправить заявку</p>
+      <div class="vmodal__body">
+        <form class="vform" action="">
+          <div class="vform__row">
+            <input type="text" placeholder="Имя"><span class="vform-line"></span>
+          </div>
+          <div class="vform__row">
+            <input type="email" placeholder="E-mail"><span class="vform-line"></span>
+          </div>
+          <div class="vform__row">
+            <input type="text" placeholder="Телефон"><span class="vform-line"></span>
+          </div>
+          <div class="vform__row">
+            <button class="vbtn vbtn_main vbtn_bounceTop" type="submit">Получить!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="vmodal vmodal_default vmodal_center vmodal__text" id="vmodaltext">
+    <div class="vmodal__box">
+      <button class="vmodal__close" type="button" data-close="vmodal">&times;</button>
+      <p class="vmodal__title">Политика конфиденциальности</p>
+      <div class="vmodal__body">
+        <div class="vmodal__inner">
+          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="vmodal vmodal-transparent" id="modalvideo">
+    <div class="vmodal-dialog big">
+      <button class="vmodal-close" type="button" data-close="vmodal">&times;</button>
+      <div class="vmodal-box">
+        <p class="vmodal-title"></p>
+        <div class="vmodal-body">
+          <div class="vmodal-video"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>

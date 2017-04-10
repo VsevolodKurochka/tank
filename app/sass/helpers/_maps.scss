@@ -1,0 +1,78 @@
+/// Settings grid.
+$grid-system: (
+	menuExists            : true,
+	columns 							: 12,
+	flex                  : true,
+	columnName            : "vak",
+	width 								: 100%,
+	gutter 								: 15px
+);
+
+/// Media-queries.
+$breakpoints: (
+	lgBiggest : 1920px,
+	lg        : 1200px,
+	md        : 1025px,
+	sm        : 768px,
+	xs        : 480px,
+	exs       : 320px
+);
+
+/// Containers width.
+$containers: (
+	sm					: 750px,
+	md					: 970px,
+	lg 					: 1170px,
+	lgBiggest  	: 1890px
+);
+
+/// All colors
+$colors: (
+	main: (
+		base	: $color-main,
+		light : lighten($color-main, 15%)
+	),
+	menu: (
+		base  : $color-responsive-menu,
+		light : lighten($color-responsive-menu, 5%)
+	),
+	dark: (
+		base 	: #333,
+		black : #000,
+		light : #f3f3f3
+	),
+	white: (
+		base  : white
+	),
+	green: (
+		base 	: #5bb85d
+	)
+);
+
+
+/// Sizes for elements.
+$sizes: (
+	'vtitle-big': (
+		xs:   48px,
+		sm:   80px,
+		lg:   100px
+	),
+	'vtitle': (
+		md:   60px
+	),
+	'vtitle-small': (
+		sm:   30px
+	)
+);
+
+
+/// Z-indexes.
+$z-indexes: (
+	'loader__spin'  : 1001,
+	'loader'        : 1000,
+	'modal'					: 1000,
+	'modal__overlay' : 999,
+	'nav'						: 10,
+	'default'     	: 1,
+	'below'       	: -1
+);

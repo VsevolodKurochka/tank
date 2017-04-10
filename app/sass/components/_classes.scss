@@ -1,0 +1,36 @@
+.transition{
+  @include transition();
+}
+.pseudo{
+  @include pseudo();
+}
+.vertical-image{
+  &:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;   
+  }
+  img{
+    max-height: 100%;
+    vertical-align: middle;   
+  }
+}
+.size{
+  &-zero{
+    font-size: 0;
+  }
+}
+.outline{
+  &-none{
+    outline: none;
+  }
+}
+.tap-transparent{
+  -webkit-tap-highlight-color: transparent;
+}
+@for $i from 1 through 3{
+  .index-#{$i}{
+    z-index: $i;
+  }
+}

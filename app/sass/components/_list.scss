@@ -1,0 +1,20 @@
+.list{
+  li{
+    @extend .relative;
+    &:after{
+      @extend .pseudo;
+      top: 0;
+    }
+  }
+  &-cancel{
+    li{
+      padding-left: 30px;
+      &:after{
+        left: 0;
+        width: 37px;
+        height: 37px;
+        //@include bg();
+      }
+    }
+  }
+}
