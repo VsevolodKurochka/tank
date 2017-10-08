@@ -1,2 +1,541 @@
 // @include resp-min(){}
 // @include resp-max(){}
+.default-padding{
+	@include resp-min(md){
+		padding-left: 45px;
+		padding-right: 45px;
+	}
+	@include resp-min(lg){
+		padding-left: 85px;
+		padding-right: 85px;
+	}
+}
+.text{
+	font-size: 16px;
+	line-height: 1.75;
+	//@extend .light;
+	color: #949494;
+	&__row{
+		margin-bottom: 40px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__title{
+		position: relative;
+		font-size: 20px;
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+		color: setColor(dark);
+		@extend .bold;
+		&:after{
+			@include pseudo()
+			left: 0;
+			bottom: 0;
+			width: 50px;
+			height: 4px;
+			border-radius: 2px;
+			background-color: #ffc734;
+		}
+	}
+	@include resp-min(sm){
+		&__row{
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 80px;
+			&:nth-child(even){
+				flex-direction: row-reverse;
+			}
+		}
+	}
+}
+.bg{
+	&-grey{
+		background-color: #272727;
+	}
+	&-tank{
+		@include bg('../img/tank_bg.jpg');
+		&2{
+			@include bg('../img/tank_bg2.jpg');
+		}
+	}
+	&-check{
+		@include bg('../img/bg_check.jpg');
+		@include resp-min(md){
+			padding-top: 90px;
+		}
+	}
+}
+.caption{
+	&:last-child{
+		margin-bottom: 0;
+	}
+	&__header{
+		font-size: 0;
+		height: 210px;
+		overflow: hidden;
+		img{
+			max-width: none;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	&__body{
+		padding: 15px;
+		border: 1px solid #e7e7e7;
+		line-height: 1.7;
+	}
+	@include resp-max(sm){
+		margin-bottom: 30px;
+	}
+}
+.variant{
+	
+	color: setColor(white);
+	//text-align: center;
+	&__inner{
+		position: relative;
+	}
+	&__image{
+		font-size: 0;
+	}
+	&__title,
+	&__footer{
+		text-align: center;
+	}
+	&__title{
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	&__body{
+		padding-left: 15px;
+		padding-right: 15px;
+		color: #949494;
+	}
+	@include resp-max(sm){
+		&:not(:last-child){
+			margin-bottom: 30px;
+		}
+		&__inner{
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+		&__footer{
+			margin-top: 30px;
+		}
+		&__image{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			z-index: -1;
+		}
+	}
+	@include resp-min(sm){
+		&__text,
+		&__footer{
+			position: absolute;
+			left: 0;
+			width: 100%;
+		}
+		&__text{
+			top: 50px;
+		}
+		&__body{
+			font-size: 13px;
+		}
+		&__footer{
+			bottom: 15px;
+		}
+	}
+	@include resp-min(md){
+		&__body{
+			font-size: 18px;
+		}
+		&__text{
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&__footer{
+			bottom: 70px;
+		}
+	}
+	@include resp-min(lg){
+		&__body{
+			padding-left: 45px;
+			padding-right: 45px;
+		}
+	}
+}
+.more{
+	@include resp-min(md){
+		&__text,
+		&__button{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		&__text{
+			margin-right: 30px;
+			&-title{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.slider{
+	color: setColor(white);
+	&__image{
+		overflow: hidden;
+	}
+	&__title{
+		font-size: 20px;
+		margin-bottom: 15px;
+		@extend .bold;
+	}
+	&__text{
+		font-size: 16px;
+		opacity: 0.7;
+	}
+	.owl{
+		&-dot{
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			border-radius: 100%;
+			margin-right: 20px;
+			background-color: #fff;
+			opacity: 0.2;
+			&.active{
+				opacity: 1;
+			}
+			&s{
+				margin-top: 15px;
+				text-align: center;
+			}
+		}
+		&-nav{
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&-prev,
+		&-next{
+			position: absolute;
+			top: 0;
+			width: 16px;
+			height: 29px;
+			@include bg('../img/sliderArrow.png');
+		}
+		&-prev{
+			left: 0;
+		}
+		&-next{
+			right: 0;
+			transform: scaleX(-1);
+		}
+		@include resp-min(sm){
+			&-prev{
+				left: -15px;
+			}
+		}
+		@include resp-min(md){
+			&-dot{
+				width: 5px;
+				height: 5px;
+				margin-right: 10px;
+			}
+			&-prev{
+				left: -45px;
+			}
+			&-next{
+				right: -45px;
+			}
+		}
+		@include resp-min(lg){
+			&-dot{
+				&s{
+					width: 470px;
+				}
+			}
+			&-prev{
+				left: -85px;
+			}
+			&-next{
+				right: -85px;
+			}
+		}
+	}
+	@include resp-max(sm){
+		&__image{
+			margin-bottom: 30px;
+		}
+	}
+	@include resp-min(sm){
+		&__row{
+			align-items: center;
+		}
+		@include resp-max(md){
+			&-padding{
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+		}
+	}
+	@include resp-min(md){
+		&__title{
+			font-size: 30px;
+		}
+		&__image{
+			height: 360px;
+		}
+	}
+	@include resp-min(lg){
+		&__title{
+			font-size: 42px;
+		}
+		&__text{
+			font-size: 18px;
+		}
+	}
+}
+.vform{
+	width: 100%;
+	@extend .center-block;
+	@include resp-min(sm){
+		&-fixed-width{
+			width: 300px;
+		}
+	}
+	input{
+		display: inline-block;
+		background-color: transparent;
+		border: none;
+		border-bottom: 1px solid #ddd;
+		border-radius: 0;
+		text-align: left;
+		max-width: 100%;
+		padding: 15px;
+		color: #fff;
+		font-size: 15px;
+		-webkit-appearance: none;
+		@extend .outline-none;
+		@extend .d-i;
+		@extend .regular;
+		@extend .transition;
+		&:focus{
+			border-color: setColor(main);
+		}
+	}
+	&__label{
+		@extend .roboto;
+		@extend .regular;
+		color: #5f605f;
+		font-size: 20px;
+		line-height: 1;
+	}
+	&__row{
+		position: relative;
+		margin-top: 18px;
+		&:first-child{
+			margin-top: 0;
+		}
+		&-btn{
+			margin-top: 45px;
+		}
+	}
+	&__text{
+		color: #fff;
+		text-align: center;
+		margin-bottom: 50px;
+		&-inner{
+			position: relative;
+			display: inline-block;
+			
+		}
+	}
+	@include resp-max(xs){
+		&__text{
+			&-title{
+				font-size: 18px;
+				margin-top: 15px;
+			}
+		}
+	}
+	@include resp-max(sm){
+		&__row{
+			text-align: center;
+			margin-bottom: 35px;
+		}
+		input{
+			display: block;
+			width: 100%
+		}
+	}
+	@include resp-min(sm){
+		&__row{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			input{
+				flex-grow: 1;
+			}
+			&-btn{
+				margin-top: 70px;
+			}
+			&-padding{
+				&-small{
+					padding-left: 30px;
+					padding-right: 30px;
+				}
+				&-big{
+					padding-left: 60px;
+					padding-right: 60px;
+				}
+				&-bigger{
+					padding-left: 90px;
+					padding-right: 90px;
+				}
+			}
+		}
+		&__label{
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 30px;
+			font-size: 25px;
+		}
+	}
+	@include resp-max(md){
+		&__text{
+			text-align: center;
+		}
+	}
+	@include resp-min(md){
+
+		&__text{
+			&-inner{
+				text-align: left;
+			}
+			&-warning{
+				position: absolute;
+				right: -90px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+		&__label{
+			
+			font-size: 42px;
+			
+		}
+	}
+	@include resp-min(lg){
+		&__row{
+			&-padding{
+				&-small{
+					padding-left: 94px;
+					padding-right: 87px;
+				}
+				&-big{
+					padding-left: 160px;
+					padding-right: 160px;
+				}
+				&-bigger{
+					padding-left: 225px;
+					padding-right: 210px;
+				}
+			}
+		}
+	}
+	@if($design-form == 'new'){
+		input{
+			border: none;
+		}
+		@at-root{
+			.vmodal &{
+				color: $color-modal-trans;
+				[type="submit"]{
+					border: 3px solid $color-modal-trans;
+					border-radius: 0;
+					background-color: transparent;
+					font-size: 20px;
+					color: inherit;
+					text-transform: uppercase;
+					outline: none;
+					&:hover,
+					&:focus{
+						border-color: $color-modal-main;
+						color: $color-modal-main;
+					}
+				}
+			}
+		}
+		&-line{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 1px;
+			width: 0;
+			background-color: $color-modal-main;
+			@extend .transition;
+		}
+		input:focus + &-line{
+			width: 100%;
+		}
+		&__row{
+			&:after{
+				@extend .pseudo;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 1px;
+				background-color: $color-modal-trans;
+			}
+		}
+		@include resp-min(xs){
+			&-btn-wrap{
+				max-width: 70%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			&__row{
+				margin-top: 30px;
+			}
+		}		
+	}
+}
+.thx{
+	&__greeting{
+		padding: 75px 15px;
+		text-align: center;
+		color: #fff;
+		@include bg('../img/bg_thx.jpg');
+	}
+	&__underline{
+		border-bottom: 1px solid #ffc734;
+	}
+	// &__title{
+	// 	text-decoration: underline;
+	// 	text-decoration-color: #ffc734;
+	// }
+	@include resp-max(sm){
+		&__title{
+			line-height: 1.75;
+		}
+	}
+	@include resp-min(sm){
+		&__greeting{
+			padding-top: 150px;
+			padding-bottom: 150px;
+		}
+	}
+	@include resp-min(lg){
+		&__greeting{
+			padding-top: 300px;
+			padding-bottom: 300px;
+		}
+	}
+}

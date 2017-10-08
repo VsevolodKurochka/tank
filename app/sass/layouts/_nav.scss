@@ -26,6 +26,9 @@
 				display: none;
 			}
 		}
+		&__row{
+			justify-content: space-between;
+		}
 	}
 	@if ( getComp(menuExists) == true ){
 		@at-root{
@@ -38,6 +41,8 @@
 			display: block;
 		}
 		&__link{
+
+			text-transform: uppercase;
 			color: inherit;
 			@extend .relative;
 			@extend .text-dn;
@@ -239,12 +244,34 @@
 			}
 		}
 		@include resp-min(md){
+			&_fixed{
+				position: absolute;
+				width: 100%;
+				top: 30px;
+				left: 0;
+				z-index: z('nav');
+			}
+			&__menu{
+				text-align: right;
+			}
 			&__item{
 				display: inline-block;
 				vertical-align: middle;
-				padding: 15px 5px;
+				
+				&:first-child{
+					padding-left: 0;
+				}
+				&:last-child{
+					padding-right: 0;
+				}
+			}
+			&__list{
+				display: flex;
+				justify-content: space-between;
 			}
 			&__link{
+				font-size: 13px;
+				color: setColor(white);
 				&:after{
 					top: 100%;
 					left: 0;
@@ -262,6 +289,11 @@
 			}
 			&__btn{
 				display: none;
+			}
+		}
+		@include resp-min(lg){
+			&_fixed{
+				top: 80px;
 			}
 		}
 	}

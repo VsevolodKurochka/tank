@@ -62,6 +62,7 @@ End:  HIDDEN AND VISIBLE UTILITIES
   @include cf();
   @extend .relative;
 }
+.negative,
 .vrow{
   @include xOffset('margin', - getComp(gutter));
 }
@@ -103,13 +104,29 @@ End:  HIDDEN AND VISIBLE UTILITIES
     }
   }  
 }
-%padding-block{
+%vsection{
   padding-top: 50px;
-  padding-bottom: 50px; 
+  padding-bottom: 50px;
 }
 .vsection{
-  @extend %padding-block;
   @extend .relative;
+  @extend %vsection;
+  &_small{
+    @extend %vsection;
+    @extend .relative;
+  }
+  @include resp-min(md){
+    padding-top: 80px;
+    padding-bottom: 80px;
+    &_small{
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+  @include resp-min(lg){
+    padding-top: 115px;
+    padding-bottom: 115px;
+  }
 }
 .vpull{
   &-left{

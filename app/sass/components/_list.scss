@@ -3,16 +3,18 @@
     @extend .relative;
     &:after{
       @extend .pseudo;
-      top: 0;
     }
   }
-  &-cancel{
+  &_bullet{
     li{
-      padding-left: 30px;
+      padding-left: 15px;
       &:after{
         left: 0;
-        width: 37px;
-        height: 37px;
+        top: 6px;
+        width: 5px;
+        height: 5px;
+        border-radius: 100%;
+        background-color: #fff;
         //@include bg();
       }
     }

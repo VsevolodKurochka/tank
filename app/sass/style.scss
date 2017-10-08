@@ -6,6 +6,7 @@
 @import 'base/reset';
 @import 'base/base';
 @import 'base/fonts';
+@import "dev/text";
 
 @import 'layouts/grid';
 @import 'layouts/nav';
@@ -19,7 +20,7 @@
 @import 'components/collapse';
 
 @import "dev/loader";
-@import "dev/text";
+
 @import "dev/dev";
 
 //@import 'fontawesome/font-awesome';

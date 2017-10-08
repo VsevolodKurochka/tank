@@ -2,13 +2,117 @@ extends includes/layout
 block title
 	title Main Page
 block content
-	.vcontainer
-		+button("vbtn vbtn_main vbtn_shutterVerticalOut", "#vmodaltext")(data-content="#vmodalText_content" data-title="Заголовок") Button
+	header.vheader
+		.vcontainer
+			.vrow.default-padding
+				.vak.xs-12.sm-5.md-4
+					.vheader__text
+						h1.vtitle-big.vtitle-big_offset.vheader__title <span class="black">ADVENTURE <br>TOURS</span><br>IN UKRAINE
+						.vhidden-xs
+							+link("vbtn vbtn_big vbtn_dark vbtn_shutterVerticalOut", "#") Book now
+				.vak.xs-12.sm-7.md-8
+					.vheader__image
+						img(src="img/tank.png")
+					.vvisible-xs.text-center
+						+link("vbtn vbtn_big vbtn_dark vbtn_shutterVerticalOut", "#") Book now
+		.vheader__video
+			video(poster="http://www.drivetanks.com/wp-content/uploads/2016/05/Tank-Background-03-1920x1080-1.jpg" muted="muted" preload="auto" loop="true" autoplay="true" class="vheader__video-inner")
+				source(type="video/mp4" src="http://www.drivetanks.com/wp-content/uploads/2016/05/Home_BG_Video.mp4")
+				source(type="video/webm" src="http://www.drivetanks.com/wp-content/uploads/2016/05/Home_BG_Video.webm")
+	section.vsection
+		.vcontainer
+			.negative.default-padding
+				+text('img/tank1.png', 'Ищите новых ощущений?') Если вы хотите сделать что-то совершенно сумасшедшее, что-то исключительное и необычное, катание на танке - это для вас. Танковый тур не может сравниться ни с одним другим впечатлением в вашей жизни.
+				+text('img/tank2.png', 'Станьте настоящим танкистом') Прикоснитесь к действующей боевой машине, чтобы сразу почувствовать свою мужественность и силу. Получите новые эмоции от вождения танка с нашим опытным инструктором.
+				+text('img/tank3.png', 'Настоящий мужской отдых') Рыбалка в прошлом. Насыщенная программа, которую мы для вас приготовили оставит равнодушными только любителей маникюрных салонов.
+	section.vsection.bg-tank.color-white
+		.vcontainer
+			.default-padding
+				h3.vtitle-big Не откладывайте на потом, <br><span class="black">записывайтесь на тур уже сейчас:</span>
+				+link("vbtn vbtn_big vbtn_border vbtn_border_strong vbtn_shutterHorizontalOut", "#") Поехали !
+	section.vsection
+		.vcontainer
+			h3.vtitle-big.vtitle-big_offset.text-center <span class="regular">Вам это нужно, если Вы:</span>
+			.vrow.default-padding
+				+caption("img/need1.jpg") Ищете новые эмоции и ощущения среды серых и одинаковых дней
+				+caption("img/need2.jpg") Хотите провести настоящий мужской день
+				+caption("img/need3.jpg") Мечтаете держать под контролем 600 лошадинных сил.
+	section.vsection.bg-tank2.color-white
+		.vcontainer
+			.default-padding
+				h3.vtitle-big Нет более сильных ощущений, чем <br><span class="black">ощущение собственной власти!</span>
+				+link("vbtn vbtn_big vbtn_border vbtn_border_strong vbtn_shutterHorizontalOut", "#") Записаться на тур
+	section.vsection.bg-grey
+		.vcontainer
+			.negative.default-padding.slider-padding
+				.owl-carousel.slider
+					+sliderItem("img/slider1.jpg", "Przemyslaw Sobieski") You can't go wrong with Adventure Tours, we've been with Sergei - company owner in shooting range. He's very friendly and professional. This mix of action thrill and friendliness makes for a great day!
+					+sliderItem("img/slider2.jpg", "Julian Geprägs") Awesome day with with the company owner. Did a lot more stuff than we booked, he also showed us a lot of stuff. Great guy, great company and awesome tour. Thanks!
+					+sliderItem("img/slider3.jpg", "Lucas Petersson") Honestly I could never have hoped for a better time with these guys. I stroongly recommend this to all! Extremely helpful, personal and nothing is impossible
+					+sliderItem("img/slider4.jpg", "Ryan Barna") These crazy guys run awesome exciting and fun tours! Went shooting and had a blast ... plan to come back and see what other crazy stuff they have for me!
+	section.vsection.variant__section
+		.vcontainer
+			h3.vtitle-big.vtitle-big_offset.text-center <span class="regular">Выберете один из Вариантов</span>
+			.vrow
+				+variant('img/v1.jpg', 'Вариант 1', "#")
+					ul.list.list_bullet
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+				+variant('img/v2.png', 'Вариант 2', "#")
+					ul.list.list_bullet
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+				+variant('img/v3.png', 'Вариант 3', "#")
+					ul.list.list_bullet
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+						li Bullter textxt xtxt xt xt xt xt xt
+	section.vsection.bg-check
+		.vcontainer
+			.vform__text
+				.vform__text-inner
+					img(src="img/warning.png" class="vform__text-warning")
+					p.vtitle-big.vform__text-title Если не знаете что выбрать,
+					p оставьте свои данные - у нас есть что Вам предложить.
+			form(action="" class="vform")
+				.vform__row.vform__row-padding-small
+					label(for="vname" class="vform__label") Здравствуйте, меня зовут
+					input(name="vname" id="vname" type="text")
+				.vform__row.vform__row-padding-big
+					label(for="vemail" class="vform__label") вот мой номер телефона
+					input(name="vemail" id="vemail" type="email")
+				.vform__row.vform__row-padding-bigger
+					label(for="vphone" class="vform__label") и e-mail
+					input(name="vphone" id="vphone" type="text")
+				.vform__row.vform__row-btn.text-center
+					button.vbtn.vbtn_big.vbtn_dark.vbtn_main.vbtn_bounceTop(type="submit") отправить
+	section.vsection.vsection_small.bg-grey.color-white.text-center
+		.vcontainer
+			.more__text
+				p.vtitle-big.more__text-title Больше интересных туров для Вас
+			.more__button
+				+link("vbtn vbtn_big vbtn_border vbtn_border_strong vbtn_shutterHorizontalOut", "http://adventuretours.in.ua/") Узнать подробнее
+	footer.vfooter
+		.vcontainer
+			.vrow.vfooter__row
+				.vak.xs-12.sm-8.md-6
+					ul.vnav__list.vfooter__list
+						+item("http://adventuretours.in.ua/") home
+						+item("http://adventuretours.in.ua/index-services.html#main") Our service
+						+item("http://adventuretours.in.ua/index-tour-video.html#main") tour video
+						+item("http://adventuretours.in.ua/index-chernobyl-tour.html#main") chernobyl
+						+item("http://adventuretours.in.ua/index-shooting-tour.html#main") shooting tour					
+				.vak.xs-12.sm-4.md-5.vfooter__text
+					p 2016 @ Adventure Tours in Ukraine
 block dev
-	.vmodal__content#vmodalText_content
-		p asdasdasd
-		h1 12312312
-		h2 123123123
 	include includes/modals/default
 	include includes/modals/text
 	include includes/modals/video

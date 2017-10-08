@@ -1,8 +1,9 @@
 body{
   color: setColor(dark, black);  
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.42857143;
   @extend .regular;
+  @extend .roboto;
 }
 img{
   max-width: 100%;

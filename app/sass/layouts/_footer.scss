@@ -1,4 +1,27 @@
 .vfooter{
-	padding: 10px 15px;
-	background-color: #131313;
+	padding: 15px 0;
+	border-top: 2px solid #0c0c0c;
+	background-color: #272727;
+	color: #fff;
+	@include resp-max(sm){
+		&__list{
+			text-align: center;
+			a{
+				padding: 15px;
+			}
+		}
+		&__text{
+			text-align: center;
+			margin-top: 15px;
+		}
+	}
+	@include resp-min(sm){
+		&__list{
+			display: flex;
+			justify-content: space-between;
+		}
+		&__text{
+			text-align: right;
+		}
+	}
 }

@@ -1,6 +1,6 @@
 include mixins
-.vrow.flex-v-center
-	.vak.xs-8.md-3
+.vrow.flex-v-center.vnav__row
+	.vak.xs-8.md-2
 		.vnav__logo
 			button(type="button" class="vnav__btn" data-menu=".vnav_fixed .vnav__menu")
 				span.vnav__btn-lines
@@ -10,16 +10,18 @@ include mixins
 				//span.vnav__btn-text Menu
 			.d-i
 				img(src="img/logo.png" alt="")
-	nav.vnav__menu.vak.xs-12.md-6
-		ul
-			+item("#sec1", "active") Главная
-			+item("#sec2") item_2
-			+item("#sec3") item_3
-	.vak.xs-4.md-3.vnav__text
-		.vnav__text-toggle.js-vnav-toggle
-			span
-			span
-			span
-		.vnav__text-links.js-vnav-links
-			a.vnav__text-links-inner +38 (093) 961 33 54
-			a.vnav__text-links-inner.vnav__text-links-inner_hidden +38 (093) 961 33 54
+	nav.vak.xs-12.md-6.vnav__menu
+		ul.vnav__list
+			+item("http://adventuretours.in.ua/") home
+			+item("http://adventuretours.in.ua/index-services.html#main") Our service
+			+item("http://adventuretours.in.ua/index-tour-video.html#main") tour video
+			+item("http://adventuretours.in.ua/index-chernobyl-tour.html#main") chernobyl
+			+item("http://adventuretours.in.ua/index-shooting-tour.html#main") shooting tour
+	//- .vak.xs-4.md-3.vnav__text
+	//- 	.vnav__text-toggle.js-vnav-toggle
+	//- 		span
+	//- 		span
+	//- 		span
+	//- 	.vnav__text-links.js-vnav-links
+	//- 		a.vnav__text-links-inner +38 (093) 961 33 54
+	//- 		a.vnav__text-links-inner.vnav__text-links-inner_hidden +38 (093) 961 33 54

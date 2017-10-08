@@ -37,9 +37,9 @@ $colors: (
 		light : lighten($color-responsive-menu, 5%)
 	),
 	dark: (
-		base 	: #333,
+		base 	: #141414,
 		black : #000,
-		light : #f3f3f3
+		light : #c9c9c9
 	),
 	white: (
 		base  : white
@@ -53,15 +53,8 @@ $colors: (
 /// Sizes for elements.
 $sizes: (
 	'vtitle-big': (
-		xs:   48px,
-		sm:   80px,
-		lg:   100px
-	),
-	'vtitle': (
-		md:   60px
-	),
-	'vtitle-small': (
-		sm:   30px
+		xs:   30px,
+		sm:   42px
 	)
 );
 

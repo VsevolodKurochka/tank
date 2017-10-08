@@ -1,8 +1,8 @@
 mixin item(href, active)
 	if(active)
-		li(class="vnav__item vnav__item_active"): a( class="vnav__link" href=href ): block
+		li(class="vnav__item vnav__item_active"): a( class="vnav__link" target="_blank" href=href ): block
 	else	
-		li(class="vnav__item"): a( class="vnav__link" href=href ): block
+		li(class="vnav__item"): a( class="vnav__link" target="_blank" href=href ): block
 mixin button(buttonClass, modalTarget)
 
 	- buttonClass = buttonClass || 'vbtn vbtn-effect-shutter-vertical-out vbtn_main'
@@ -13,3 +13,43 @@ mixin button(buttonClass, modalTarget)
 		- modalTarget = "#modalform"
 
 	button(class=buttonClass data-func="vmodal" data-target=modalTarget)&attributes(attributes): block
+mixin link(linkClass, link)
+
+	- linkClass = linkClass || 'vbtn vbtn-effect-shutter-vertical-out vbtn_main'
+
+	a(class=linkClass href=link)&attributes(attributes): block
+mixin text(src, title)
+	.flex.text__row
+		.vak.xs-12.sm-6.md-6.lg-7
+			img(src=src)
+		.vak.xs-12.sm-6.md-6.lg-4.text
+			p.text__title= title
+			p: block
+mixin caption(src)
+	.vak.xs-12.sm-4.caption
+		.caption__header
+			img(src=src)
+		.caption__body
+			p: block
+mixin variant(src, title, link, text)
+	.vak.xs-12.sm-4.variant
+		.variant__inner
+			.variant__image
+				img(src=src)
+			.variant__text
+				p.variant__title= title
+				.variant__body: block	
+			.variant__footer
+				a(class="vbtn vbtn_border vbtn_border_opacity vbtn_shutterHorizontalOut" href=link) Подробнее
+mixin sliderItem(src, title)
+	.item
+		.flex.slider__row
+			.vak.xs-12.sm-6
+				.slider__image
+					img(src=src)
+			.vak.xs-12.sm-6
+				p.slider__title=title
+				.vrow
+					.vak.xs-12.sm-9
+						.slider__text
+							p: block

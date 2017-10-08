@@ -1,0 +1,29 @@
+extends includes/layout
+block title
+	title Main Page
+block content
+	section.thx__greeting
+		.thx__text
+			h1.vtitle-big.thx__title <span class="thx__underline black">Спасибо за оставленную заявку!</span><br><span class="thx__underline">Мы свяжемся с вами в ближайшее время.</span>
+	section.vsection_small.bg-grey.color-white.text-center
+		.vcontainer
+			.more__text
+				p.vtitle-big.more__text-title Больше интересных туров для Вас
+			.more__button
+				+link("vbtn vbtn_big vbtn_border vbtn_border_strong vbtn_shutterHorizontalOut", "http://adventuretours.in.ua/") Узнать подробнее
+	footer.vfooter
+		.vcontainer
+			.vrow.vfooter__row
+				.vak.xs-12.sm-8.md-6
+					ul.vnav__list.vfooter__list
+						+item("http://adventuretours.in.ua/") home
+						+item("http://adventuretours.in.ua/index-services.html#main") Our service
+						+item("http://adventuretours.in.ua/index-tour-video.html#main") tour video
+						+item("http://adventuretours.in.ua/index-chernobyl-tour.html#main") chernobyl
+						+item("http://adventuretours.in.ua/index-shooting-tour.html#main") shooting tour					
+				.vak.xs-12.sm-4.md-5.vfooter__text
+					p 2016 @ Adventure Tours in Ukraine
+block dev
+	include includes/modals/default
+	include includes/modals/text
+	include includes/modals/video

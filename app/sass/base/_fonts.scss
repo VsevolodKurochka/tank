@@ -1,22 +1,25 @@
-@include connect-font(ProximaRegular,regular);
-@include connect-font(ProximaLight,light);
-@include connect-font(ProximaBold,bold);
-@include connect-font(ProximaBlack,black);
-// .robotoSlab{
-// 	font-family: 'Roboto Slab', serif;
-// }
+// @include connect-font(ProximaRegular,regular);
+// @include connect-font(ProximaLight,light);
+// @include connect-font(ProximaBold,bold);
+// @include connect-font(ProximaBlack,black);
+.roboto{
+	font-family: 'Roboto', sans-serif;
+}
 // .rubik{
 // 	font-family: 'Rubik One', sans-serif;
 // }
-// .regular{
-// 	font-weight: 400;
-// }
+.regular{
+	font-weight: 400;
+}
 // .thin{
 // 	font-weight: 100;
 // }
-// .light{
-// 	font-weight: 300;
-// }
-// .bold{
-// 	font-weight: 700;
-// }
+.light{
+	font-weight: 300;
+}
+.bold{
+	font-weight: 700;
+}
+.black{
+	font-weight: 900;
+}
